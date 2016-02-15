@@ -1,0 +1,33 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Gender</th>
+			<th>Age</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in users">
+			<td ng-bind="user.id"></td>
+			<td ng-bind="user.fName"></td>
+			<td ng-bind="user.lName"></td>
+			<td ng-bind="user.gender"></td>
+			<td ng-bind="user.age"></td>
+			<td>
+				<a href="#/edit/{{$index}}"><span class="glyphicon glyphicon-pencil"></span></a>
+			</td>
+			<td>
+				<button class="btn" ng-click="delete($index)">
+					<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Delete
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<hr>
+<a href="#/new"><span class="glyphicon glyphicon-user"></span> Create New User</a>
+<hr>
